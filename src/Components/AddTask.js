@@ -5,8 +5,11 @@ const AddTask = ({ handleAdd }) => {
   const [desc, setDesc] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleAdd({ id: Date.now(), description: desc, isDone: false });
-    setDesc("");
+    if (desc.length<=3) {alert("oops min 3 chars")} else 
+   {
+     handleAdd({ id: Date.now(), description: desc, isDone: false });
+     setDesc("");
+   }
   };
   return (
     <div>
